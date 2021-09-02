@@ -1,14 +1,10 @@
 import Button from './Button'
 
-const Header = (props) => {
-    const onClick = (e) => {
-        console.log(e.target);
-    }
-
+const Header = ({ title, addButton, formVisible }) => {
     return(
         <header className="header">
-            <h1 style={{ color: 'black' }}>{props.title}</h1>
-            <Button color="green" text="Add" onClick={onClick} />
+            <h1 style={{ color: 'black' }}>{title}</h1>
+            <Button color={`${formVisible ? 'red' : 'green'}`} text={`${formVisible ? 'Cancel' : 'Add'}`} onClick={addButton} />
         </header>
 
     ) 
